@@ -3,29 +3,7 @@
 <head>
   <meta charset='utf-8'>
   <link href='./style.css' type='text/css' rel='stylesheet'>
-  <script type='text/javascript'>
-    
-	function c(val){
-	  document.getElementById('display').value = val;
-	}
-	
-    function math (val) {
-      if (val==""){
-      //delete one symbol from display
-        document.getElementById('display').value = '';
-    }
-      document.getElementById('display').value += val;
-    }
-	
-	function e(){
-	  try{
-	    c(eval(document.getElementById('display').value));
-	  }
-	  catch (e){
-	    c('Error');
-	  }
-	}
-  </script>
+  <script type="text/javascript" src='./script.js' ></script>
 </head>
 <body>
   <div class='display'>
@@ -33,31 +11,32 @@
     <input type='text' id='display'>
     <div class='keys'>
       <p>
-        <input type='button' class='button' value='1' onclick='math("1")'>
-        <input type='button' class='button' value='2' onclick='math("2")'>
-		<input type='button' class='button' value='3' onclick='math("3")'>
-		<input type='button' class='button' value='+' onclick='math("+")'>
+        <input type='button' class='button' value='1' onclick='formInput("1")'>
+        <input type='button' class='button' value='2' onclick='formInput("2")'>
+		    <input type='button' class='button' value='3' onclick='formInput("3")'>
+		    <input type='button' class='button' value='+' onclick='formInput("+")'>
       </p>
       <p>
-        <input type='button' class='button' value='4' onclick='math("4")'>
-        <input type='button' class='button' value='5' onclick='math("5")'>
-		<input type='button' class='button' value='6' onclick='math("6")'>
-		<input type='button' class='button' value='-' onclick='math("-")'>
+        <input type='button' class='button' value='4' onclick='formInput("4")'>
+        <input type='button' class='button' value='5' onclick='formInput("5")'>
+		    <input type='button' class='button' value='6' onclick='formInput("6")'>
+		    <input type='button' class='button' value='-' onclick='formInput("-")'>
       </p>
       <p>
-        <input type='button' class='button' value='7' onclick='math("7")'>
-        <input type='button' class='button' value='8' onclick='math("8")'>
-		<input type='button' class='button' value='9' onclick='math("9")'>
-		<input type='button' class='button' value='x' onclick='math("*")'>
+        <input type='button' class='button' value='7' onclick='formInput("7")'>
+        <input type='button' class='button' value='8' onclick='formInput("8")'>
+		    <input type='button' class='button' value='9' onclick='formInput("9")'>
+		    <input type='button' class='button' value='x' onclick='formInput("*")'>
       </p> 
       <p>
-        <input type='button' class='button' value='.' onclick='math(".")'>
-        <input type='button' class='button' value='0' onclick='math("0")'>
-		<input type='button' class='button' value='=' onclick='e()'>
-		<input type='button' class='button' value='/' onclick='math("/")'>
+        <input type='button' class='button' value='.' onclick='formInput(".")'>
+        <input type='button' class='button' value='0' onclick='formInput("0")'>
+		    <input type='button' class='button' value='=' onclick='errorInput()'>
+		    <input type='button' class='button' value='/' onclick='formInput("/")'>
       </p>    
       <p>
-        <input type='button' class='button' value='del' onclick=''>
+        <input type='button' class='button' value='del' onclick='delValue()'>
+        <input type='button' class='button' value='c' onclick='clearForm()'>
       </p>
 </body>	  
 </html>
